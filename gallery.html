@@ -4,77 +4,46 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gallery | Cafe Fausse</title>
-    <style>
-      .gallery-image {
-        width: 100%;
-        max-width: 700px;
-        border-radius: 12px;
-        margin-top: 16px;
-        cursor: pointer;
-        display: block;
-      }
-
-      .lightbox {
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.85);
-        display: none;
-        align-items: center;
-        justify-content: center;
-        padding: 24px;
-        z-index: 1000;
-      }
-
-      .lightbox.active {
-        display: flex;
-      }
-
-      .lightbox img {
-        max-width: 100%;
-        max-height: 90vh;
-        border-radius: 12px;
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
-      }
-    </style>
+    <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
-    <nav style="background: #2f2a24; padding: 14px 24px; position: sticky; top: 0; z-index: 10;">
-      <div style="max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-        <a href="/index.html" style="color: white; text-decoration: none; font-weight: bold;">Cafe Fausse</a>
-        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-          <a href="/menu.html" style="color: white; text-decoration: none;">Menu</a>
-          <a href="/reservations.html" style="color: white; text-decoration: none;">Reservations</a>
-          <a href="/about.html" style="color: white; text-decoration: none;">About Us</a>
-          <a href="/gallery.html" style="color: white; text-decoration: none;">Gallery</a>
+    <nav class="site-nav">
+      <div class="nav-inner">
+        <a class="brand" href="/index.html">Cafe Fausse</a>
+        <div class="nav-links">
+          <a href="/menu.html">Menu</a>
+          <a href="/reservations.html">Reservations</a>
+          <a href="/about.html">About Us</a>
+          <a href="/gallery.html">Gallery</a>
         </div>
       </div>
     </nav>
 
-    <div style="font-family: Arial, sans-serif; padding: 24px; max-width: 1200px; margin: 0 auto;">
+    <div class="container container--wide">
       <h1>Gallery</h1>
       <p>Take a look at the ambiance, dishes, and events that make Cafe Fausse special.</p>
 
-      <div style="display: flex; gap: 24px; align-items: flex-start; flex-wrap: wrap;">
-        <div style="flex: 1 1 600px;">
+      <div class="two-column">
+        <div class="main-column">
           <img class="gallery-image" src="/Images/gallery-cafe-interior.webp" alt="Cafe Fausse interior" />
           <img class="gallery-image" src="/Images/gallery-ribeye-steak.webp" alt="Ribeye steak dish" />
           <img class="gallery-image" src="/Images/gallery-special-event.webp" alt="Special event at Cafe Fausse" />
         </div>
 
-        <div style="flex: 1 1 280px; border: 1px solid #ddd; border-radius: 12px; padding: 20px; background: #fafafa; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-          <h2 style="margin-top: 0;">Awards</h2>
-          <ul style="padding-left: 20px; line-height: 1.7;">
+        <aside class="sidebar">
+          <h2>Awards</h2>
+          <ul class="list">
             <li>Culinary Excellence Award – 2022</li>
             <li>Restaurant of the Year – 2023</li>
             <li>Best Fine Dining Experience – Foodie Magazine, 2023</li>
           </ul>
 
           <h2>Customer Reviews</h2>
-          <ul style="padding-left: 20px; line-height: 1.7;">
+          <ul class="list">
             <li>“Exceptional ambiance and unforgettable flavors.” – Gourmet Review</li>
             <li>“A must-visit restaurant for food enthusiasts.” – The Daily Bite</li>
           </ul>
-        </div>
+        </aside>
       </div>
     </div>
 

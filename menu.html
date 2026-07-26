@@ -4,29 +4,35 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menu | Cafe Fausse</title>
+    <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
-    <nav style="background: #2f2a24; padding: 14px 24px; position: sticky; top: 0; z-index: 10;">
-      <div style="max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
-        <a href="/index.html" style="color: white; text-decoration: none; font-weight: bold;">Cafe Fausse</a>
-        <a href="/menu.html" style="color: white; text-decoration: none;">Menu</a>
+    <nav class="site-nav">
+      <div class="nav-inner">
+        <a class="brand" href="/index.html">Cafe Fausse</a>
+        <div class="nav-links">
+          <a href="/menu.html">Menu</a>
+          <a href="/reservations.html">Reservations</a>
+          <a href="/about.html">About Us</a>
+          <a href="/gallery.html">Gallery</a>
+        </div>
       </div>
     </nav>
 
-    <div style="font-family: Arial, sans-serif; padding: 24px; max-width: 1000px; margin: 0 auto;">
+    <div class="container">
       <h1>Menu</h1>
       <p>Explore our signature dishes and seasonal specials.</p>
 
       <div style="margin-top: 24px; display: grid; gap: 24px;">
         <section>
           <h2>Starters</h2>
-          <div style="display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
-            <div style="border: 1px solid #ddd; border-radius: 12px; padding: 16px; background: #fff;">
+          <div class="cards">
+            <div class="card card-item">
               <h3>Bruschetta</h3>
               <p>Fresh tomatoes, basil, olive oil, and toasted baguette slices.</p>
               <p><strong>$8.50</strong></p>
             </div>
-            <div style="border: 1px solid #ddd; border-radius: 12px; padding: 16px; background: #fff;">
+            <div class="card card-item">
               <h3>Caesar Salad</h3>
               <p>Crisp romaine with homemade Caesar dressing.</p>
               <p><strong>$9.00</strong></p>
@@ -36,18 +42,18 @@
 
         <section>
           <h2>Main Courses</h2>
-          <div style="display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
-            <div style="border: 1px solid #ddd; border-radius: 12px; padding: 16px; background: #fff;">
+          <div class="cards">
+            <div class="card card-item">
               <h3>Grilled Salmon</h3>
               <p>Served with lemon butter sauce and seasonal vegetables.</p>
               <p><strong>$22.00</strong></p>
             </div>
-            <div style="border: 1px solid #ddd; border-radius: 12px; padding: 16px; background: #fff;">
+            <div class="card card-item">
               <h3>Ribeye Steak</h3>
               <p>12 oz prime cut with garlic mashed potatoes.</p>
               <p><strong>$28.00</strong></p>
             </div>
-            <div style="border: 1px solid #ddd; border-radius: 12px; padding: 16px; background: #fff;">
+            <div class="card card-item">
               <h3>Vegetable Risotto</h3>
               <p>Creamy Arborio rice with wild mushrooms.</p>
               <p><strong>$18.00</strong></p>
@@ -57,13 +63,13 @@
 
         <section>
           <h2>Desserts</h2>
-          <div style="display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
-            <div style="border: 1px solid #ddd; border-radius: 12px; padding: 16px; background: #fff;">
+          <div class="cards">
+            <div class="card card-item">
               <h3>Tiramisu</h3>
               <p>Classic Italian dessert with mascarpone.</p>
               <p><strong>$7.50</strong></p>
             </div>
-            <div style="border: 1px solid #ddd; border-radius: 12px; padding: 16px; background: #fff;">
+            <div class="card card-item">
               <h3>Cheesecake</h3>
               <p>Creamy cheesecake with berry compote.</p>
               <p><strong>$7.00</strong></p>
@@ -73,23 +79,23 @@
 
         <section>
           <h2>Beverages</h2>
-          <div style="display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
-            <div style="border: 1px solid #ddd; border-radius: 12px; padding: 16px; background: #fff;">
+          <div class="cards">
+            <div class="card card-item">
               <h3>Red Wine (Glass)</h3>
               <p>A selection of Italian reds.</p>
               <p><strong>$10.00</strong></p>
             </div>
-            <div style="border: 1px solid #ddd; border-radius: 12px; padding: 16px; background: #fff;">
+            <div class="card card-item">
               <h3>White Wine (Glass)</h3>
               <p>Crisp and refreshing.</p>
               <p><strong>$9.00</strong></p>
             </div>
-            <div style="border: 1px solid #ddd; border-radius: 12px; padding: 16px; background: #fff;">
+            <div class="card card-item">
               <h3>Craft Beer</h3>
               <p>Local artisan brews.</p>
               <p><strong>$6.00</strong></p>
             </div>
-            <div style="border: 1px solid #ddd; border-radius: 12px; padding: 16px; background: #fff;">
+            <div class="card card-item">
               <h3>Espresso</h3>
               <p>Strong and aromatic.</p>
               <p><strong>$3.00</strong></p>

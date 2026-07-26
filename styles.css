@@ -1,0 +1,48 @@
+/* Shared site styles */
+:root{
+  --brand-bg: #1e88e5; /* navbar blue */
+  --muted-border: #ddd;
+  --card-bg: #fff;
+}
+*{box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;margin:0;color:#222}
+
+/* Navigation */
+nav.site-nav{background:var(--brand-bg);position:sticky;top:0;z-index:10}
+.nav-inner{max-width:1000px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{color:#fff;text-decoration:none;font-weight:700}
+.nav-links{display:flex;gap:16px;flex-wrap:wrap}
+.nav-links a{color:#fff;text-decoration:none}
+
+/* Page container */
+.container{max-width:1000px;margin:0 auto;padding:24px}
+
+/* Cards / menu */
+.cards{display:flex;flex-wrap:wrap;gap:16px;align-items:stretch}
+.card{border:1px solid var(--muted-border);border-radius:12px;padding:16px;background:var(--card-bg)}
+.card-item{flex:1 1 240px;max-width:360px}
+
+/* Forms */
+.form{max-width:600px;display:flex;flex-direction:column;gap:16px}
+.form-row{display:flex;gap:12px;flex-wrap:wrap}
+.input{width:100%;padding:10px;border:1px solid #ccc;border-radius:8px}
+.btn{padding:10px 18px;border:none;border-radius:8px;background:var(--brand-bg);color:#fff;cursor:pointer;width:fit-content}
+
+/* Form helpers */
+.col-grow{flex:1 1 240px;min-width:220px}
+.col-fixed{flex:0 0 120px;min-width:110px}
+.form label{display:block;margin-bottom:6px;font-weight:700}
+
+/* Gallery layout helpers */
+.container--wide{max-width:1200px}
+.two-column{display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap}
+.main-column{flex:1 1 600px}
+.sidebar{flex:1 1 280px;border:1px solid var(--muted-border);border-radius:12px;padding:20px;background:#fafafa;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
+.sidebar h2{margin-top:0}
+.list{padding-left:20px;line-height:1.7}
+
+/* Gallery */
+.gallery-image{width:100%;max-width:700px;border-radius:12px;margin-top:16px;cursor:pointer;display:block}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.85);display:none;align-items:center;justify-content:center;padding:24px;z-index:1000}
+.lightbox.active{display:flex}
+.lightbox img{max-width:100%;max-height:90vh;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,0.35)}

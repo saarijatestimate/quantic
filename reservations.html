@@ -4,51 +4,58 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reservations | Cafe Fausse</title>
+    <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
-    <nav style="background: #2f2a24; padding: 14px 24px; position: sticky; top: 0; z-index: 10;">
-      <div style="max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-        <a href="/index.html" style="color: white; text-decoration: none; font-weight: bold;">Cafe Fausse</a>
-        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-          <a href="/menu.html" style="color: white; text-decoration: none;">Menu</a>
-          <a href="/reservations.html" style="color: white; text-decoration: none;">Reservations</a>
-          <a href="/about.html" style="color: white; text-decoration: none;">About Us</a>
-          <a href="/gallery.html" style="color: white; text-decoration: none;">Gallery</a>
+    <nav class="site-nav">
+      <div class="nav-inner">
+        <a class="brand" href="/index.html">Cafe Fausse</a>
+        <div class="nav-links">
+          <a href="/menu.html">Menu</a>
+          <a href="/reservations.html">Reservations</a>
+          <a href="/about.html">About Us</a>
+          <a href="/gallery.html">Gallery</a>
         </div>
       </div>
     </nav>
 
-    <div style="font-family: Arial, sans-serif; padding: 24px; max-width: 1000px; margin: 0 auto;">
+    <div class="container">
       <h1>Reservations</h1>
       <p>Reserve your table for an intimate dinner or special celebration.</p>
 
-      <form style="margin-top: 24px; max-width: 600px; display: grid; gap: 16px;">
-        <div>
-          <label for="datetime" style="display: block; margin-bottom: 6px; font-weight: bold;">Time Slot</label>
-          <input id="datetime" type="datetime-local" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px;" />
+      <form class="form">
+        <div class="form-row">
+          <div class="col-grow">
+            <label for="datetime">Time Slot</label>
+            <input id="datetime" class="input" type="datetime-local" />
+          </div>
+
+          <div class="col-fixed">
+            <label for="guests">Guests</label>
+            <input id="guests" class="input" type="number" min="1" max="12" value="2" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="col-grow main-column">
+            <label for="name">Customer Name</label>
+            <input id="name" class="input" type="text" placeholder="Enter your name" />
+          </div>
+
+          <div class="col-grow">
+            <label for="email">Email Address</label>
+            <input id="email" class="input" type="email" placeholder="Enter your email" />
+          </div>
         </div>
 
         <div>
-          <label for="guests" style="display: block; margin-bottom: 6px; font-weight: bold;">Number of Guests</label>
-          <input id="guests" type="number" min="1" max="12" value="2" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px;" />
+          <label for="phone">Phone Number (optional)</label>
+          <input id="phone" class="input" type="tel" placeholder="Enter your phone number" />
         </div>
 
         <div>
-          <label for="name" style="display: block; margin-bottom: 6px; font-weight: bold;">Customer Name</label>
-          <input id="name" type="text" placeholder="Enter your name" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px;" />
+          <button type="submit" class="btn">Submit Reservation</button>
         </div>
-
-        <div>
-          <label for="email" style="display: block; margin-bottom: 6px; font-weight: bold;">Email Address</label>
-          <input id="email" type="email" placeholder="Enter your email" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px;" />
-        </div>
-
-        <div>
-          <label for="phone" style="display: block; margin-bottom: 6px; font-weight: bold;">Phone Number (optional)</label>
-          <input id="phone" type="tel" placeholder="Enter your phone number" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px;" />
-        </div>
-
-        <button type="submit" style="width: fit-content; padding: 10px 18px; border: none; border-radius: 8px; background: #2f2a24; color: white; cursor: pointer;">Submit Reservation</button>
       </form>
     </div>
 
