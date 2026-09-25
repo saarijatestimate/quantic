@@ -166,9 +166,9 @@ em { color: var(--gold); font-weight: 400; }
 .gallery-grid { display: grid; gap: 20px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .gallery-item { cursor: pointer; margin: 0; }
 .gallery-item img { display: block; height: 340px; object-fit: cover; width: 100%; }
-.gallery-item-large img { height: 440px; }
+.gallery-item-large img { height: 340px; }
 .gallery-item-wide { grid-column: 1 / -1; }
-.gallery-item-wide img { height: 400px; }
+.gallery-item-wide img { height: 340px; }
 .gallery-item figcaption { color: #766c61; font-family: var(--serif); font-size: 13px; padding-top: 11px; }
 .lightbox { align-items: center; background: rgba(17, 13, 11, .8); display: none; inset: 0; justify-content: center; padding: 32px; position: fixed; z-index: 1000; }
 .lightbox.open { display: flex; }
@@ -176,9 +176,9 @@ em { color: var(--gold); font-weight: 400; }
 .lightbox-image { background: #f5f1ea; border-radius: 12px; display: block; max-height: 78vh; max-width: min(620px, 58vw); object-fit: contain; width: auto; }
 .lightbox-text { color: #f3ead9; max-width: 360px; }
 .lightbox-caption { color: #f2e7d7; font-family: var(--serif); font-size: 16px; margin: 0 0 18px; }
-.lightbox-awards h3 { color: #d4b57d; font-size: 11px; letter-spacing: .12em; margin: 14px 0 8px; text-transform: uppercase; }
-.lightbox-awards ul { color: #eee1ca; font-size: 13px; line-height: 1.8; margin: 0; padding-left: 18px; }
-.lightbox-awards li + li { margin-top: 6px; }
+.awards h3 { color: #d4b57d; font-family: var(--serif); font-size: clamp(28px, 2vw, 38px); font-weight: 400; letter-spacing: -.04em; line-height: 1.12; margin: 18px 0 10px; }
+.awards ul { color: #eee1ca; font-size: 13px; line-height: 1.8; margin: 0; padding-left: 18px; }
+.awards li + li { margin-top: 6px; }
 .lightbox-close { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.25); border-radius: 50%; color: white; cursor: pointer; font-size: 32px; height: 42px; line-height: 1; position: absolute; right: 24px; top: 24px; width: 42px; }
 body.no-scroll { overflow: hidden; }
 .seasonal-menu { display: grid; gap: 42px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -211,9 +211,9 @@ body.no-scroll { overflow: hidden; }
   .page-hero { min-height: 370px; padding-left: 7vw; padding-right: 7vw; }
   .seasonal-menu { gap: 30px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .about-photo { height: 430px; }
-  .gallery-item img { height: 290px; }
-  .gallery-item-large img { height: 360px; }
-  .gallery-item-wide img { height: 330px; }
+  .gallery-item img { height: 340px; }
+  .gallery-item-large img { height: 340px; }
+  .gallery-item-wide img { height: 340px; }
 }
 
 @media (max-width: 620px) {
@@ -261,7 +261,7 @@ body.no-scroll { overflow: hidden; }
   .about-photo { height: 330px; }
   .about-story h2, .reservation-copy h2 { font-size: 40px; }
   .gallery-grid { gap: 16px; grid-template-columns: 1fr; }
-  .gallery-item img, .gallery-item-large img, .gallery-item-wide img { height: 300px; }
+  .gallery-item img, .gallery-item-large img, .gallery-item-wide img { height: 340px; }
   .gallery-item-wide { grid-column: auto; }
   .site-footer { align-items: flex-start; display: grid; gap: 15px; grid-template-columns: 1fr 1fr; padding: 26px 22px; }
   .site-footer > p { align-self: center; justify-self: end; text-align: right; }
