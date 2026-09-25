@@ -1,44 +1,37 @@
-# Cafe Fausse
+# Café Fausse reservation website
 
-This project is currently using a simple static-site setup for the restaurant pages, and it also includes a small Express API for reservations.
+Start the website and PostgreSQL together with Docker Compose:
 
-## React note
-The site is not yet running as a full React app, but React can be added if you want a component-based frontend.
-
-## How to install React
-If you want to start using React in this project, install it with Vite:
-
-```bash
-npm create vite@latest . --template react
-npm install
+```powershell
+Copy-Item .env.example .env
+docker compose up --build -d
 ```
 
-This will add:
-- React
-- ReactDOM
-- Vite
-- The basic app structure for a modern frontend
+Open **http://localhost:3000** to visit the website. The reservation form saves customer details and bookings to PostgreSQL. The site and database ports are bound to localhost only. By default, PostgreSQL is also available on `localhost:5432`; connection details are configured in `.env` (database `quantic`, user `quantic`, password `quantic_dev_password`). Database data is persisted in the `postgres_data` Docker volume.
 
-## Start the app
-After installation:
+Each half-hour time slot accepts up to 20 guests total by default. When a booking would exceed that capacity, the API returns a `409` response and the form displays a “fully booked” message instead of saving it. Change `MAX_GUESTS_PER_SLOT` in `.env` to adjust the per-slot capacity. Concurrent requests for the same slot are serialized in PostgreSQL to prevent overbooking.
 
-```bash
-npm run dev
+On first startup with an empty data volume, PostgreSQL runs `init/001_schema.sql` to create:
+
+- `customers`: `customer_id`, `customer_name`, `customer_email`, `phone_number`, and `newsletter_signup`.
+- `reservations`: `reservation_id`, the associated `customer_id`, `reservation_at`, and `party_size`.
+
+The customer email is unique, newsletter signup defaults to `false`, and each reservation must reference an existing customer. The website also ensures the schema exists when it starts. PostgreSQL only runs initialization scripts when creating a new data directory. To apply this schema manually to a database that already has a data volume, run:
+
+```powershell
+docker compose exec -T postgres psql -U quantic -d quantic -f /docker-entrypoint-initdb.d/001_schema.sql
 ```
 
-Then open the local URL shown in the terminal.
+If you changed the database or user in `.env`, replace `quantic` in that command with the configured values. Rebuild and start the site after code changes with `docker compose up --build -d`.
 
-## db 
--	Actions performed: installed PostgreSQL in Ubuntu-24.04, created database cafe_db, applied schema.sql.
-- How to connect (interactive WSL session):
-o	Open WSL: wsl -d Ubuntu-24.04 -- bash
-o	Connect as postgres: sudo -u postgres psql -d cafe_db
+To stop PostgreSQL without deleting its data:
 
+```powershell
+docker compose down
+```
 
+To remove the database and its persisted data as well:
 
-## Current project structure
-- Static HTML pages in the workspace root
-- Shared styles in `styles.css`
-- Reservation API in `server/index.js`
-- Database connection in `server/db.js`
-
+```powershell
+docker compose down -v
+```
