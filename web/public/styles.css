@@ -104,6 +104,16 @@ em { color: var(--gold); font-weight: 400; }
 .wordmark-footer .wordmark-mark { border-color: #766345; }
 .site-footer > p { color: #b8aca0; font-family: var(--serif); font-size: 12px; margin: 0 auto 0 0; }
 .site-footer > a:not(.wordmark) { color: #d3c8b9; font-size: 9px; }
+.footer-signup { display: flex; flex-direction: column; gap: 8px; min-width: min(100%, 310px); }
+.footer-signup-label { color: #ead9ba; font-size: 8px; letter-spacing: .14em; text-transform: uppercase; }
+.footer-signup-row { display: flex; gap: 10px; }
+.footer-signup input { background: rgba(255,255,255,.04); border: 1px solid rgba(196,163,110,.45); color: white; flex: 1; min-height: 40px; outline: none; padding: 0 12px; }
+.footer-signup input::placeholder { color: rgba(255,255,255,.55); }
+.footer-signup input:focus { border-color: #d4b57d; }
+.footer-signup input[aria-invalid="true"] { border-color: #d06a5b; }
+.footer-signup-button { width: auto; min-width: 110px; }
+.footer-signup-message { color: #dfe9cf; font-size: 10px; min-height: 16px; margin: 0; }
+.footer-signup-message.error { color: #f5b0a2; }
 .copyright { color: #92877c; font-size: 9px; }
 
 .main-nav a[aria-current="page"] { color: #9b7848; }

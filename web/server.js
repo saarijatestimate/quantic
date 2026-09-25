@@ -31,6 +31,35 @@ app.get("/api/health", async (_request, response, next) => {
   }
 });
 
+app.post("/api/newsletter/signup", async (request, response, next) => {
+  const body = request.body && typeof request.body === "object" ? request.body : {};
+  const email = typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 254) {
+    return response.status(400).json({ error: "Please enter a valid email address." });
+  }
+
+  try {
+    const customer = await pool.query(
+      `INSERT INTO customers (customer_name, customer_email, newsletter_signup)
+       VALUES ('Newsletter Subscriber', $1, TRUE)
+       ON CONFLICT (customer_email) DO UPDATE SET
+         newsletter_signup = TRUE,
+         customer_name = COALESCE(customers.customer_name, 'Newsletter Subscriber')
+       RETURNING customer_id, customer_email`,
+      [email],
+    );
+
+    response.status(200).json({
+      customerId: customer.rows[0].customer_id,
+      email: customer.rows[0].customer_email,
+      message: "You’re on the list for Café Fausse updates.",
+    });
+  } catch (error) {
+    next(error);
+  }
+});
+
 app.post("/api/reservations", async (request, response, next) => {
   const body = request.body && typeof request.body === "object" ? request.body : {};
   const name = typeof body.name === "string" ? body.name.trim() : "";

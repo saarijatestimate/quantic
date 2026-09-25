@@ -96,6 +96,14 @@
     <footer class="site-footer">
       <a class="wordmark wordmark-footer" href="/index.html"><span class="wordmark-mark" aria-hidden="true">C<span>·</span>F</span><span class="wordmark-name">CAFÉ FAUSSE</span></a>
       <p>Good evenings, made together.</p>
+      <form class="footer-signup" id="footer-signup-form" novalidate>
+        <label class="footer-signup-label" for="signup-email">Join our email list</label>
+        <div class="footer-signup-row">
+          <input id="signup-email" name="signupEmail" type="email" placeholder="you@example.com" aria-label="Email address" required>
+          <button class="button button-dark footer-signup-button" type="submit"><span>Join</span><span aria-hidden="true">↗</span></button>
+        </div>
+        <p class="footer-signup-message" id="footer-signup-message" role="status" aria-live="polite"></p>
+      </form>
       <a href="/gallery.html">Gallery</a>
       <span class="copyright">© <span id="year"></span> Café Fausse</span>
     </footer>

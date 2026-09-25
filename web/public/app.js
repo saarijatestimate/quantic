@@ -2,6 +2,13 @@ const form = document.querySelector("#reservation-form");
 const message = document.querySelector("#form-message");
 const reservationInput = form?.elements.reservationAt;
 const submitButton = form?.querySelector('button[type="submit"]');
+const footerSignupForm = document.querySelector("#footer-signup-form");
+const footerSignupInput = footerSignupForm?.querySelector('input[name="signupEmail"]');
+const footerSignupMessage = document.querySelector("#footer-signup-message");
+
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+}
 
 function localDateTimeString(date) {
   const year = date.getFullYear();
@@ -67,6 +74,42 @@ form?.addEventListener("submit", async (event) => {
   } finally {
     submitButton.disabled = false;
     submitButton.querySelector("span:first-child").textContent = "Find my table";
+  }
+});
+
+footerSignupForm?.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const email = footerSignupInput?.value || "";
+  footerSignupMessage.classList.remove("error");
+  footerSignupMessage.textContent = "";
+  footerSignupInput?.setAttribute("aria-invalid", "false");
+
+  if (!isValidEmail(email)) {
+    footerSignupMessage.textContent = "Please enter a valid email address.";
+    footerSignupMessage.classList.add("error");
+    footerSignupInput?.setAttribute("aria-invalid", "true");
+    footerSignupInput?.focus();
+    return;
+  }
+
+  try {
+    const response = await fetch("/api/newsletter/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.error || "We couldn’t save your email right now.");
+    }
+
+    footerSignupMessage.textContent = result.message || "Thanks for joining our newsletter.";
+    footerSignupForm.reset();
+  } catch (error) {
+    footerSignupMessage.textContent = error.message || "We couldn’t save your email right now.";
+    footerSignupMessage.classList.add("error");
+    footerSignupInput?.setAttribute("aria-invalid", "true");
   }
 });
 
