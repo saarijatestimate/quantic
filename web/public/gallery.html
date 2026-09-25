@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#171411">
+    <meta name="description" content="A glimpse of the food, room, and gatherings at Café Fausse.">
+    <title>Gallery — Café Fausse</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="/index.html" aria-label="Café Fausse home"><span class="wordmark-mark" aria-hidden="true">C<span>·</span>F</span><span class="wordmark-name">CAFÉ FAUSSE</span></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="/menu.html">Menu</a><a href="/reservations.html">Reservations</a><a href="/about.html">About Us</a><a aria-current="page" href="/gallery.html">Gallery</a><a class="nav-cta" href="/reservations.html">Reserve a table <span aria-hidden="true">↗</span></a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+    </header>
+    <main>
+      <section class="page-hero page-hero-gallery">
+        <p class="eyebrow"><span></span> A glimpse of the good life</p>
+        <h1>Moments at<br><em>our table.</em></h1>
+        <p>A few scenes from the room, the kitchen, and the company we keep.</p>
+      </section>
+      <section class="content-page section-shell gallery-page-content">
+        <div class="gallery-heading"><p class="eyebrow eyebrow-dark">The Café Fausse gallery</p><h2>Made for <em>memories.</em></h2></div>
+        <div class="gallery-grid">
+          <figure class="gallery-item gallery-item-large"><img src="/images/home-cafe-fausse.webp" alt="The candlelit Café Fausse dining room" loading="lazy"><figcaption>The room, ready for the evening</figcaption></figure>
+          <figure class="gallery-item"><img src="/images/gallery-ribeye-steak.webp" alt="A plated steak with fresh herbs and seasonal sides" loading="lazy"><figcaption>A little something from the kitchen</figcaption></figure>
+          <figure class="gallery-item"><img src="/images/gallery-special-event.webp" alt="A special dinner surrounded by candlelight" loading="lazy"><figcaption>Gathering around the table</figcaption></figure>
+          <figure class="gallery-item gallery-item-wide"><img src="/images/gallery-cafe-interior.webp" alt="Details of the Café Fausse interior" loading="lazy"><figcaption>Settle in and stay awhile</figcaption></figure>
+        </div>
+        <a class="button button-dark menu-reserve" href="/reservations.html"><span>Be part of the next evening</span><span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+    <div class="lightbox" id="lightbox" aria-hidden="true" aria-label="Image preview" role="dialog" aria-modal="true">
+      <button class="lightbox-close" type="button" aria-label="Close image preview">×</button>
+      <div class="lightbox-content">
+        <img class="lightbox-image" src="" alt="">
+        <div class="lightbox-text">
+          <p class="lightbox-caption"></p>
+          <div class="lightbox-awards">
+            <h3>Awards:</h3>
+            <ul>
+              <li>Culinary Excellence Award – 2022</li>
+              <li>Restaurant of the Year – 2023</li>
+              <li>Best Fine Dining Experience – Foodie Magazine, 2023</li>
+            </ul>
+            <h3>Customer Reviews:</h3>
+            <ul>
+              <li>“Exceptional ambiance and unforgettable flavors.” – Gourmet Review</li>
+              <li>“A must-visit restaurant for food enthusiasts.” – The Daily Bite</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="site-footer"><a class="wordmark wordmark-footer" href="/index.html"><span class="wordmark-mark" aria-hidden="true">C<span>·</span>F</span><span class="wordmark-name">CAFÉ FAUSSE</span></a><p>Good evenings, made together.</p><a href="/reservations.html">Reserve a table</a><span class="copyright">© <span id="year"></span> Café Fausse</span></footer>
+  </body>
+</html>

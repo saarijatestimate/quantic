@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#171411">
+    <meta name="description" content="Reserve your table at Café Fausse in Washington, DC.">
+    <title>Reservations — Café Fausse</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="/index.html" aria-label="Café Fausse home"><span class="wordmark-mark" aria-hidden="true">C<span>·</span>F</span><span class="wordmark-name">CAFÉ FAUSSE</span></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="/menu.html">Menu</a><a aria-current="page" href="/reservations.html">Reservations</a><a href="/about.html">About Us</a><a href="/gallery.html">Gallery</a><a class="nav-cta" href="#reservation-form">Reserve a table <span aria-hidden="true">↗</span></a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+    </header>
+    <main>
+      <section class="page-hero page-hero-reservations">
+        <p class="eyebrow"><span></span> Your evening starts here</p>
+        <h1>Reserve your<br><em>table.</em></h1>
+        <p>Choose a date, gather your favorite people, and leave the rest to us.</p>
+      </section>
+      <section class="content-page section-shell reservation-page-content">
+        <div class="reservation-copy">
+          <p class="eyebrow eyebrow-dark">A seat at our table</p>
+          <h2>Make an evening<br><em>of it.</em></h2>
+          <p>We look forward to welcoming you to Café Fausse. Reservations are available for parties of up to 12 guests.</p>
+          <div class="reservation-facts">
+            <div><span>Hours</span><p>Monday–Saturday<br>5:00 PM – 11:00 PM</p><p>Sunday<br>5:00 PM – 9:00 PM</p></div>
+            <div><span>Find us</span><p>1234 Culinary Ave, Suite 100<br>Washington, DC 20002</p></div>
+          </div>
+          <p class="reservation-contact">Need a larger table or have a special request?<br><a href="tel:+12025554567">Call us at (202) 555-4567</a></p>
+          <a class="reservation-menu-link" href="/menu.html">Explore the menu <span aria-hidden="true">↗</span></a>
+        </div>
+        <aside class="booking-card reservation-card" aria-labelledby="booking-title">
+          <div class="booking-heading"><p class="eyebrow eyebrow-dark">Your evening starts here</p><h2 id="booking-title">Reserve a table</h2><p>We’ll take care of the rest.</p></div>
+          <form id="reservation-form">
+            <div class="field-row">
+              <label class="field">Customer Name<input name="name" autocomplete="name" placeholder="Full name" maxlength="120" required></label>
+              <label class="field">Number of Guests<select name="partySize" required><option value="2" selected>2 guests</option><option value="1">1 guest</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option><option value="8">8 guests</option><option value="9">9 guests</option><option value="10">10 guests</option><option value="11">11 guests</option><option value="12">12 guests</option></select></label>
+            </div>
+            <label class="field">Email Address<input name="email" type="email" autocomplete="email" placeholder="you@example.com" maxlength="254" required></label>
+            <label class="field">Time Slot<input name="reservationAt" type="datetime-local" step="1800" required></label>
+            <label class="field">Phone Number <span class="optional">optional</span><input name="phone" type="tel" autocomplete="tel" placeholder="(202) 555-4567" maxlength="40"></label>
+            <label class="newsletter"><input name="newsletterSignup" type="checkbox"><span>Send me occasional notes from our table.</span></label>
+            <button class="button button-dark" type="submit"><span>Find my table</span><span aria-hidden="true">↗</span></button>
+            <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+            <p class="booking-note">For parties larger than 12, please call us directly.</p>
+          </form>
+        </aside>
+      </section>
+    </main>
+    <footer class="site-footer"><a class="wordmark wordmark-footer" href="/index.html"><span class="wordmark-mark" aria-hidden="true">C<span>·</span>F</span><span class="wordmark-name">CAFÉ FAUSSE</span></a><p>Good evenings, made together.</p><a href="/menu.html">Explore the menu</a><span class="copyright">© <span id="year"></span> Café Fausse</span></footer>
+  </body>
+</html>
